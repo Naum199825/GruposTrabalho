@@ -2,6 +2,7 @@
 package io.github.naum.grupostrabalho;
 
 import java.io.Serializable;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -18,6 +19,25 @@ public class Endereco implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    
+    @Column(nullable = false)
+    private TipoLogradouro tipoLogradouro;
+    
+    @Column(length = 150, nullable = false)
+    private String logradouro;
+    
+    @Column(nullable = false)
+    private Integer numero;
+    
+    @Column(nullable = false, length = 25)
+    private String bairro;
+    
+    public enum TipoLogradouro{
+        RUA, 
+        AVENIDA, 
+        PRACA, 
+        OUTRO;
+    }
 
     public Long getId() {
         return id;
@@ -27,29 +47,29 @@ public class Endereco implements Serializable {
         this.id = id;
     }
 
-    @Override
-    public int hashCode() {
-        int hash = 0;
-        hash += (id != null ? id.hashCode() : 0);
-        return hash;
+    public String getLogradouro() {
+        return logradouro;
     }
 
-    @Override
-    public boolean equals(Object object) {
-        // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Endereco)) {
-            return false;
-        }
-        Endereco other = (Endereco) object;
-        if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
-            return false;
-        }
-        return true;
+    public void setLogradouro(String logradouro) {
+        this.logradouro = logradouro;
     }
 
-    @Override
-    public String toString() {
-        return "io.github.naum.grupostrabalho.Endereco[ id=" + id + " ]";
+    public Integer getNumero() {
+        return numero;
     }
+
+    public void setNumero(Integer numero) {
+        this.numero = numero;
+    }
+
+    public String getBairro() {
+        return bairro;
+    }
+
+    public void setBairro(String bairro) {
+        this.bairro = bairro;
+    }
+        
     
 }
