@@ -52,7 +52,7 @@ public class Pessoa implements Serializable {
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "pessoa")
     private List<Atuacao> atuacao;
     
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "lider")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "lider")
     private List<Grupo> grupo;
     
     

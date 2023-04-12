@@ -70,6 +70,15 @@ public class Endereco implements Serializable {
     public void setBairro(String bairro) {
         this.bairro = bairro;
     }
-        
+
+    public TipoLogradouro getTipoLogradouro() {
+        return tipoLogradouro;
+    }
+
+    public void setTipoLogradouro(TipoLogradouro tipoLogradouro) {
+        this.tipoLogradouro = tipoLogradouro;
+    }
+    
+    
     
 }

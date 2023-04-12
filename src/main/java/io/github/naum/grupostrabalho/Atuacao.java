@@ -38,6 +38,10 @@ public class Atuacao implements Serializable {
     @ManyToMany
     @JoinColumn(name = "pessoa_id")
     private List<Pessoa> pessoa;
+    
+    @ManyToMany
+    @JoinColumn(name = "grupo_id")
+    private List<Grupo> grupo;
 
     public Atuacao() {
         pessoa = new ArrayList<>();
@@ -79,6 +83,16 @@ public class Atuacao implements Serializable {
         public void setPessoa(List<Pessoa> pessoa) {
             this.pessoa = pessoa;
         }
+        
+        public List<Grupo> getGrupo() {
+           return grupo;
+        }
+
+        public void setGrupo(List<Grupo> grupo) {
+           this.grupo = grupo;
+        }
     //</editor-fold>
+
+   
 
 }

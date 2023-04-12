@@ -10,6 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
@@ -33,21 +34,21 @@ public class Grupo implements Serializable {
     @Column(nullable= false)
     private boolean ativo = true;
     
-    @ManyToMany
+    @ManyToMany(mappedBy = "grupo")
     private List<Atuacao> atuacao;
     
     @ManyToMany
     @JoinColumn(name = "pessoa_id")
+    @JoinTable()
     private List<Pessoa> pessoa;
     
     @ManyToOne
     @JoinColumn(name = "lider_id")
-    private List<Pessoa> lider;
+    private Pessoa lider;
 
     public Grupo() {
         atuacao = new ArrayList<>();
         pessoa = new ArrayList<>();
-        lider = new ArrayList<>();
     }
     
     //<editor-fold defaultstate="collapsed" desc="Getters and Setters">
@@ -91,11 +92,11 @@ public class Grupo implements Serializable {
           this.pessoa = pessoa;
       }
 
-      public List<Pessoa> getLider() {
+      public Pessoa getLider() {
           return lider;
       }
 
-      public void setLider(List<Pessoa> lider) {
+      public void setLider(Pessoa lider) {
           this.lider = lider;
       }
     
