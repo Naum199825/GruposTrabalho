@@ -9,6 +9,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -16,6 +17,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 
 /**
  *
@@ -39,9 +41,9 @@ public class Atuacao implements Serializable {
     @JoinColumn(name = "pessoa_id")
     private List<Pessoa> pessoa;
     
-    @ManyToMany
+    @ManyToOne
     @JoinColumn(name = "grupo_id")
-    private List<Grupo> grupo;
+    private Grupo grupo;
 
     public Atuacao() {
         pessoa = new ArrayList<>();
@@ -84,15 +86,48 @@ public class Atuacao implements Serializable {
             this.pessoa = pessoa;
         }
         
-        public List<Grupo> getGrupo() {
+        public Grupo getGrupo() {
            return grupo;
         }
 
-        public void setGrupo(List<Grupo> grupo) {
+        public void setGrupo(Grupo grupo) {
            this.grupo = grupo;
         }
     //</editor-fold>
 
-   
+    //<editor-fold defaultstate="collapsed" desc="Hash/Equals/ToString">
+            @Override
+        public int hashCode() {
+            int hash = 3;
+            hash = 29 * hash + Objects.hashCode(this.id);
+            return hash;
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (this == obj) {
+                return true;
+            }
+            if (obj == null) {
+                return false;
+            }
+            if (getClass() != obj.getClass()) {
+                return false;
+            }
+            final Atuacao other = (Atuacao) obj;
+            return Objects.equals(this.id, other.id);
+        }
+
+        @Override
+        public String toString() {
+            return "Atuacao{" + "id=" + id 
+                    + ", inicio=" + inicio 
+                    + ", termino=" + termino 
+                    + ", pessoa=" + pessoa 
+                    + ", grupo=" + grupo 
+                    + '}';
+        } 
+   //</editor-fold>
+
 
 }

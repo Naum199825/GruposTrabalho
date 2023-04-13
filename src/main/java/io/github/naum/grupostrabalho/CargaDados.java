@@ -21,6 +21,7 @@ public class CargaDados implements CargaDadosLocal {
 
     @Inject
     private PessoaServiceLocal persistenceService;
+    private GrupoServiceLocal persistenceService2; // Esta dando erro aqui, nao esta aceitando duas injeção de persistencia
     
     @PostConstruct
     @Override
@@ -57,7 +58,7 @@ public class CargaDados implements CargaDadosLocal {
         p1.setTelefone(teles1);
         p1.setEndereco(end1);
         
-        persistenceService.salvar(p1);
+        
         
         // Populando Beatriz
         Telefone t4 = new Telefone();
@@ -134,17 +135,55 @@ public class CargaDados implements CargaDadosLocal {
         Pes1.add(p2);
         Pes1.add(p3);
         Pes1.add(p4);
-        
-        Atuacao at1 = new Atuacao();
-        at1.setInicio("01/01/2021");
-        at1.setTermino("11/11/2021");
-        at1.setPessoa(Pes1);
-        at1.set
+          
         
         Grupo g1 = new Grupo();
         g1.setNome("Estudo 1");
         g1.setAtivo(false);
-        g1.s
+        g1.setLider(p1);
+                
+        /* Atuacao at1 = new Atuacao();
+        at1.setInicio("01/01/2011");
+        at1.setTermino("11/11/2021");
+        at1.setPessoa(Pes1);
+        at1.setGrupo(g1);
+        
+        Atuacao at2 = new Atuacao();
+        at2.setInicio("01/01/2012");
+        at2.setTermino("11/11/2022");
+        at2.setPessoa(Pes1);
+        at2.setGrupo(g1);
+        
+        Atuacao at3 = new Atuacao();
+        at3.setInicio("02/01/2012");
+        at3.setTermino("12/01/2021");
+        at3.setPessoa(Pes1);
+        at3.setGrupo(g1);
+        
+        Atuacao at4 = new Atuacao();
+        at4.setInicio("03/01/2013");
+        at4.setTermino("13/01/2021");
+        at4.setPessoa(Pes1);
+        at4.setGrupo(g1);
+        
+        Atuacao at5 = new Atuacao();
+        at5.setInicio("04/01/2014");
+        at5.setTermino("14/01/2021");
+        at5.setPessoa(Pes1);
+        at5.setGrupo(g1);
+       
+        ArrayList<Atuacao> Atus1 = new ArrayList<>();
+        Atus1.add(at1);
+        Atus1.add(at2);
+        Atus1.add(at3);
+        Atus1.add(at4);
+        Atus1.add(at5);
+        
+        g1.setAtuacao(Atus1);
+        p1.setAtuacao(Atus1);
+        */
+        persistenceService.salvar(p1);
+        //persistenceService2.salvar(g1);
     }
 
     

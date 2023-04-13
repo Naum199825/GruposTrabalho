@@ -5,6 +5,7 @@
 package io.github.naum.grupostrabalho;
 
 import java.io.Serializable;
+import java.util.Objects;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -54,5 +55,38 @@ public class Telefone implements Serializable {
            this.numero = numero;
        }
     //</editor-fold>
+
+    //<editor-fold defaultstate="collapsed" desc="Equal/Hash/ToString">
+        @Override
+     public int hashCode() {
+         int hash = 5;
+         hash = 47 * hash + Objects.hashCode(this.id);
+         return hash;
+     }
+
+     @Override
+     public boolean equals(Object obj) {
+         if (this == obj) {
+             return true;
+         }
+         if (obj == null) {
+             return false;
+         }
+         if (getClass() != obj.getClass()) {
+             return false;
+         }
+         final Telefone other = (Telefone) obj;
+         return Objects.equals(this.id, other.id);
+     }
+
+     @Override
+     public String toString() {
+         return "Telefone{" + "id=" + id 
+                 + ", ddd=" + ddd 
+                 + ", numero=" + numero 
+                 + '}';
+     }
+    //</editor-fold>
+    
     
 }

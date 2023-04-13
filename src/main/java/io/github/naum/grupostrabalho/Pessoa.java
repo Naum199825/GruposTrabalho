@@ -10,6 +10,7 @@ import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -136,5 +137,43 @@ public class Pessoa implements Serializable {
 
     //</editor-fold> 
 
+    //<editor-fold defaultstate="collapsed" desc="Hash/Equals/ToString">
+            @Override
+        public int hashCode() {
+            int hash = 5;
+            hash = 53 * hash + Objects.hashCode(this.id);
+            return hash;
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (this == obj) {
+                return true;
+            }
+            if (obj == null) {
+                return false;
+            }
+            if (getClass() != obj.getClass()) {
+                return false;
+            }
+            final Pessoa other = (Pessoa) obj;
+            return Objects.equals(this.id, other.id);
+        }
+
+
+        @Override
+        public String toString() {
+            return "Pessoa{" + "id=" + id 
+                    + ", nome=" + nome 
+                    + ", email=" + email 
+                    + ", nascimento=" + nascimento 
+                    + ", idade=" + idade 
+                    + ", endereco=" + endereco 
+                    + ", telefone=" + telefone 
+                    + ", atuacao=" + atuacao 
+                    + ", grupo=" + grupo + '}';
+        }
+
+    //</editor-fold>
     
 }
