@@ -5,6 +5,7 @@
 package io.github.naum.grupostrabalho;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -42,6 +43,7 @@ public class Grupo implements Serializable {
     private List<Atuacao> atores;
     
     public Grupo() {
+        atores =  new ArrayList<>();
     }
     
     //<editor-fold defaultstate="collapsed" desc="Setters and Getters">

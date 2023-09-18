@@ -12,6 +12,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.transaction.Transactional;
 
 /**
  *
@@ -20,8 +21,6 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(name = "Relatorios", urlPatterns = {"/Relatorios"})
 public class Relatorios extends HttpServlet {
 
-    @Inject
-    private PessoaService pessoaService;
             
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>

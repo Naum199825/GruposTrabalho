@@ -9,5 +9,8 @@
     <class>io.github.naum.grupostrabalho.Endereco</class>
     <class>io.github.naum.grupostrabalho.Atuacao</class>
     <shared-cache-mode>DISABLE_SELECTIVE</shared-cache-mode>
+    <properties>
+      <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
+    </properties>
   </persistence-unit>
 </persistence>

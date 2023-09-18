@@ -17,6 +17,10 @@ public class PessoaService implements PessoaServiceLocal {
 
     @PersistenceContext
     private EntityManager em;
-    
+
+    @Override
+    public void salvar(Pessoa Pessoa) {
+        em.persist(em);
+    }
     
 }

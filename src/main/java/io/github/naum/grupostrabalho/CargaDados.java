@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/J2EE/EJB31/SingletonEjbClass.java to edit this template
- */
 package io.github.naum.grupostrabalho;
 
 import java.time.LocalDate;
@@ -11,6 +7,7 @@ import javax.annotation.PostConstruct;
 import javax.ejb.Singleton;
 import javax.ejb.Startup;
 import javax.inject.Inject;
+import javax.transaction.Transactional;
 
 /**
  *
@@ -18,13 +15,12 @@ import javax.inject.Inject;
  */
 @Singleton
 @Startup // Ligou o servidor, ja carrega essa transacao para popular o banco
+@Transactional
 public class CargaDados implements CargaDadosLocal {
-
     @Inject
-    private PessoaService pS;
+    private PessoaServiceLocal pS;
     
     @PostConstruct
-
     @Override
     public void popularBanco() {
         Pessoa p = new Pessoa();
@@ -67,6 +63,8 @@ public class CargaDados implements CargaDadosLocal {
         gp.setNome("Kaisen");
         
         p.getGruposliderados().add(gp);
+        
+        pS.salvar(p);
         
     }
     

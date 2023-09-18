@@ -52,7 +52,7 @@ public class Pessoa implements Serializable {
     @JoinColumn(name = "pessoa_id")
     private List<Telefone> telefone;
     
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "pessoa")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "lider")
     private List<Grupo> gruposliderados;
     
     @OneToMany(cascade = CascadeType.ALL)
@@ -61,6 +61,8 @@ public class Pessoa implements Serializable {
     
     public Pessoa() {
         telefone = new ArrayList<>();
+        gruposliderados = new ArrayList<>();
+        atuacoes = new ArrayList<>();
     }
     
     //<editor-fold defaultstate="collapsed" desc="Getters and Setters">
