@@ -7,7 +7,6 @@ import javax.annotation.PostConstruct;
 import javax.ejb.Singleton;
 import javax.ejb.Startup;
 import javax.inject.Inject;
-import javax.transaction.Transactional;
 
 /**
  *
@@ -15,7 +14,6 @@ import javax.transaction.Transactional;
  */
 @Singleton
 @Startup // Ligou o servidor, ja carrega essa transacao para popular o banco
-@Transactional
 public class CargaDados implements CargaDadosLocal {
     @Inject
     private PessoaServiceLocal pS;
