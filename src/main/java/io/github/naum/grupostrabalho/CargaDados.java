@@ -18,6 +18,7 @@ public class CargaDados implements CargaDadosLocal {
     @Inject
     private PessoaServiceLocal pS;
     
+    @Inject
     private GrupoServiceLocal gS;
     
     @PostConstruct

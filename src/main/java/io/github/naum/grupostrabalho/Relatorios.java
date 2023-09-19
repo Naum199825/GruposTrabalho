@@ -6,6 +6,7 @@ package io.github.naum.grupostrabalho;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import javax.inject.Inject;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -18,9 +19,12 @@ import javax.transaction.Transactional;
  *
  * @author IFNMG
  */
+@Transactional
 @WebServlet(name = "Relatorios", urlPatterns = {"/Relatorios"})
 public class Relatorios extends HttpServlet {
-
+    
+    @Inject
+    private PessoaServiceLocal pS;
             
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -45,7 +49,23 @@ public class Relatorios extends HttpServlet {
             out.println("<title>Servlet Relatorios</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet Relatorios at " + request.getContextPath() + "</h1>");
+            out.println("<h2> Q2: Nome das Pessoas por Query </h2>");
+            out.println("<h2>" + Util.toJson(pS.nomePessoas()) +"</h2>");
+            out.println("<h2> Q2: Nome das Pessoas por TypedQuery </h2>");
+            out.println("<h2>" + Util.toJson(pS.nomePessoasTyped()) +"</h2>");
+//            out.println("<h2> Q2: Nome das Pessoas por NamedQuery </h2>");
+//            out.println("<h2>" + pS.dadosPessoaNamedQuery() +"</h2>");
+//            out.println("<pre class=\"high\">"
+//                    + Util.toJson(pS.dadosPessoas())
+//                    + "</pre>");
+//            out.println("<h2> Pessoas por Query </h2>");
+//            out.println("<pre class=\"high\">"
+//                    + Util.toJson(pS.dadosPessoaTyped())
+//                    + "</pre>");
+//            out.println("<h2> Pessoas por Query </h2>");
+//            out.println("<pre class=\"high\">"
+//                    + Util.toJson(pS.dadosPessoaNamedQuery())
+//                    + "</pre>");
             out.println("</body>");
             out.println("</html>");
         }

@@ -16,6 +16,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Transient;
@@ -25,6 +27,16 @@ import javax.persistence.Transient;
  * @author IFNMG
  */
 @Entity
+@NamedQueries({
+    @NamedQuery(
+            name = "Pessoa.findALL",
+            query = "SELECT p FROM Pessoa p"
+    ),
+        @NamedQuery(
+            name = "Pessoa.nomeALL",
+            query = "SELECT p.nome FROM Pessoa p"
+    )
+})
 public class Pessoa implements Serializable {
 
     private static final long serialVersionUID = 1L;
