@@ -92,6 +92,7 @@ public class Pessoa implements Serializable {
 
     public void setNascimento(LocalDate nascimento) {
         this.nascimento = nascimento;
+        this.idade = (byte)this.nascimento.getYear();
     }
 
     public LocalDate getNascimento() {

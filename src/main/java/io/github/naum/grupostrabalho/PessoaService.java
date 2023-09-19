@@ -1,6 +1,6 @@
 package io.github.naum.grupostrabalho;
 
-import javax.ejb.Singleton;
+import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
@@ -8,15 +8,15 @@ import javax.persistence.PersistenceContext;
  *
  * @author IFNMG
  */
-@Singleton
+@Stateless
 public class PessoaService implements PessoaServiceLocal {
 
     @PersistenceContext
     private EntityManager em;
 
     @Override
-    public void salvar(Pessoa Pessoa) {
-        em.persist(em);
+    public void salvar(Pessoa pessoa) {
+        em.persist(pessoa);
     }
     
 }

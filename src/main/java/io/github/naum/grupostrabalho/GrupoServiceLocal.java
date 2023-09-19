@@ -8,11 +8,11 @@ import javax.ejb.Local;
 
 /**
  *
- * @author IFNMG
+ * @author fried
  */
 @Local
-public interface PessoaServiceLocal {
+public interface GrupoServiceLocal {
 
-    void salvar(Pessoa pessoa);
+    void salvar(Grupo grupo);
     
 }
