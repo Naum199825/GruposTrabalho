@@ -7,6 +7,7 @@ package io.github.naum.grupostrabalho;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import javax.json.bind.annotation.JsonbTransient;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -34,12 +35,12 @@ public class Grupo implements Serializable {
     
     private Boolean ativo;
 
+    @JsonbTransient
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "pessoa_id")
     private Pessoa lider;
     
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "grupo_id")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "grupo")
     private List<Atuacao> atores;
     
     public Grupo() {

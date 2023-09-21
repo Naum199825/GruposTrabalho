@@ -24,8 +24,16 @@ public interface PessoaServiceLocal {
 
     public List<Pessoa> nomePessoas();
 
-    public List<Pessoa> nomePessoasTyped();
+    public List<String> nomePessoasTyped();
 
-    public List<Pessoa> nomePessoaNamedQuery();
+    public List<String> nomePessoaNamedQuery();
+
+    public List<Pessoa> nomePessoasEnderecos();
+
+    public List<Object[]> nomePessoasEnderecosTypedQuery();
+
+    public List<Object[]> nomePessoaEnderecosNamedQuery();
+
+    public List<Pessoa> pessoasNMPraca();
     
 }

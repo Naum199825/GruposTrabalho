@@ -49,23 +49,30 @@ public class Relatorios extends HttpServlet {
             out.println("<title>Servlet Relatorios</title>");            
             out.println("</head>");
             out.println("<body>");
-            out.println("<h2> Q2: Nome das Pessoas por Query </h2>");
-            out.println("<h2>" + Util.toJson(pS.nomePessoas()) +"</h2>");
-            out.println("<h2> Q2: Nome das Pessoas por TypedQuery </h2>");
-            out.println("<h2>" + Util.toJson(pS.nomePessoasTyped()) +"</h2>");
+//            out.println("<h2> Q1: Dados das Pessoas por Query </h2>");
+//            out.println("<h2>" + Util.toJson(pS.dadosPessoas()) +"</h2>");
+//            out.println("<h2> Q1: Dados das Pessoas por TypedQuery </h2>");
+//            out.println("<h2>" + Util.toJson(pS.dadosPessoaTyped()) +"</h2>");
+//            out.println("<h2> Q1: Dados das Pessoas por NamedQuery </h2>");
+//            out.println("<h2>" + Util.toJson(pS.dadosPessoaNamedQuery())+"</h2>");
+//            out.println("<h2> Q2: Nome das Pessoas por Query </h2>");
+//            out.println("<h2>" + Util.toJson(pS.nomePessoas()) +"</h2>");
+//            out.println("<h2> Q2: Nome das Pessoas por TypedQuery </h2>");
+//            out.println("<h2>" + Util.toJson(pS.nomePessoasTyped()) +"</h2>");
 //            out.println("<h2> Q2: Nome das Pessoas por NamedQuery </h2>");
-//            out.println("<h2>" + pS.dadosPessoaNamedQuery() +"</h2>");
-//            out.println("<pre class=\"high\">"
-//                    + Util.toJson(pS.dadosPessoas())
-//                    + "</pre>");
-//            out.println("<h2> Pessoas por Query </h2>");
-//            out.println("<pre class=\"high\">"
-//                    + Util.toJson(pS.dadosPessoaTyped())
-//                    + "</pre>");
-//            out.println("<h2> Pessoas por Query </h2>");
-//            out.println("<pre class=\"high\">"
-//                    + Util.toJson(pS.dadosPessoaNamedQuery())
-//                    + "</pre>");
+//            out.println("<h2>" + Util.toJson(pS.nomePessoaNamedQuery())+"</h2>");
+//            out.println("<h2> Q3: Nome das Pessoas e seus Enderecos por Query </h2>");
+//            out.println("<h2>" + Util.toJson(pS.nomePessoasEnderecos())+"</h2>");
+//            out.println("<h2> Q3: Nome das Pessoas e seus Enderecos por TypedQuery </h2>");
+//            out.println("<h2>" + Util.toJson(pS.nomePessoasEnderecosTypedQuery())+"</h2>");
+//            out.println("<h2> Q3: Nome das Pessoas e seus Enderecos por NamedQuery </h2>");
+//            out.println("<h2>" + Util.toJson(pS.nomePessoaEnderecosNamedQuery())+"</h2>");
+              out.println("<h2> Q3: Nome das Pessoas e seus Enderecos por Query </h2>");
+              out.println("<h2>" + Util.toJson(pS.pessoasNMPraca())+"</h2>");
+//            out.println("<h2> Q3: Nome das Pessoas e seus Enderecos por TypedQuery </h2>");
+//            out.println("<h2>" + Util.toJson(pS.nomePessoasEnderecosTypedQuery())+"</h2>");
+//            out.println("<h2> Q3: Nome das Pessoas e seus Enderecos por NamedQuery </h2>");
+//            out.println("<h2>" + Util.toJson(pS.nomePessoaEnderecosNamedQuery())+"</h2>");
             out.println("</body>");
             out.println("</html>");
         }

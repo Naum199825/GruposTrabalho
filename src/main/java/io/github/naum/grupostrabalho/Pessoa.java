@@ -6,6 +6,7 @@ package io.github.naum.grupostrabalho;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.CascadeType;
@@ -35,6 +36,10 @@ import javax.persistence.Transient;
         @NamedQuery(
             name = "Pessoa.nomeALL",
             query = "SELECT p.nome FROM Pessoa p"
+    ),
+        @NamedQuery(
+            name = "Pessoa.nomePessoasEnderecosALL",
+            query = "SELECT p.nome, p.endereco FROM Pessoa p"
     )
 })
 public class Pessoa implements Serializable {
@@ -57,7 +62,7 @@ public class Pessoa implements Serializable {
 
     //Unidirecional
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "pessoa_id")
+    @JoinColumn(name = "endereco_id")
     private Endereco endereco;
     
     @OneToMany(cascade = CascadeType.ALL)
@@ -67,8 +72,7 @@ public class Pessoa implements Serializable {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "lider")
     private List<Grupo> gruposliderados;
     
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "pessoa_id")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "pessoa")
     private List<Atuacao> atuacoes;
     
     public Pessoa() {
@@ -104,7 +108,7 @@ public class Pessoa implements Serializable {
 
     public void setNascimento(LocalDate nascimento) {
         this.nascimento = nascimento;
-        this.idade = (byte)this.nascimento.getYear();
+        this.idade = (byte)this.nascimento.until(LocalDate.now(), ChronoUnit.YEARS);
     }
 
     public LocalDate getNascimento() {

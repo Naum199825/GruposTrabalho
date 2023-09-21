@@ -30,7 +30,7 @@ public class CargaDados implements CargaDadosLocal {
         Pessoa p = new Pessoa();
         p.setNome("Ana Zaira");
         p.setEmail("ana@mail.com");
-        p.setNascimento(LocalDate.of(2001, 01, 01));
+        p.setNascimento(LocalDate.of(2001, 1, 1));
         
         Endereco end = new Endereco();
         end.setBairro("Bairro Humberto");
@@ -61,7 +61,7 @@ public class CargaDados implements CargaDadosLocal {
         Pessoa p2 = new Pessoa();
         p2.setNome("Beatriz Yana");
         p2.setEmail("batriz@mail.com");
-        p2.setNascimento(LocalDate.of(2002, 02, 02));
+        p2.setNascimento(LocalDate.of(2002, 2, 2));
         
         Endereco end2 = new Endereco();
         end2.setBairro("Bairro Doisberto");
@@ -82,7 +82,7 @@ public class CargaDados implements CargaDadosLocal {
         Pessoa p3 = new Pessoa();
         p3.setNome("Cecilia Xerxes");
         p3.setEmail("cecilia@mail.com");
-        p3.setNascimento(LocalDate.of(2003, 03, 03));
+        p3.setNascimento(LocalDate.of(2003, 3, 3));
         
         Endereco end3 = new Endereco();
         end3.setBairro("Bairro Trêsberto");
@@ -98,7 +98,7 @@ public class CargaDados implements CargaDadosLocal {
         Pessoa p4 = new Pessoa();
         p4.setNome("Débora Wendel");
         p4.setEmail("debora@mail.com");
-        p4.setNascimento(LocalDate.of(2004, 04, 04));
+        p4.setNascimento(LocalDate.of(2004, 4, 4));
         
         Endereco end4 = new Endereco();
         end4.setBairro("Bairro Quatroberto");
@@ -124,50 +124,50 @@ public class CargaDados implements CargaDadosLocal {
         
         // Populando Atuacões
         Atuacao at = new Atuacao();
-        at.setInicio(LocalDate.of(2011, 01, 01));
+        at.setInicio(LocalDate.of(2011, 1, 1));
         at.setTermino(LocalDate.of(2021, 11, 11));
         
           Atuacao at1 = new Atuacao();
-          at1.setInicio(LocalDate.of(2012, 01, 01));
+          at1.setInicio(LocalDate.of(2012, 1, 1));
           at1.setTermino(LocalDate.of(2022, 11, 11));
             
           Atuacao at2 = new Atuacao();
-          at2.setInicio(LocalDate.of(2012, 01, 02));
+          at2.setInicio(LocalDate.of(2012, 1, 2));
           at2.setTermino(LocalDate.of(2022, 11, 12));
           
           Atuacao at3 = new Atuacao();
-          at3.setInicio(LocalDate.of(2013, 01, 03));
-          at3.setTermino(LocalDate.of(2021, 01, 13));
+          at3.setInicio(LocalDate.of(2013, 1, 3));
+          at3.setTermino(LocalDate.of(2021, 1, 13));
           
           Atuacao at4 = new Atuacao();
-          at4.setInicio(LocalDate.of(2014, 01, 04));
-          at4.setTermino(LocalDate.of(2021, 01, 14));
+          at4.setInicio(LocalDate.of(2014, 1, 4));
+          at4.setTermino(LocalDate.of(2021, 1, 14));
           
           Atuacao at5 = new Atuacao();
-          at5.setInicio(LocalDate.of(2012, 01, 02));
+          at5.setInicio(LocalDate.of(2012, 1, 2));
             
           Atuacao at6 = new Atuacao();
           at6.setInicio(LocalDate.of(2012, 01, 02));
           
           Atuacao at7 = new Atuacao();
-          at7.setInicio(LocalDate.of(2012, 01, 02));
-          at7.setTermino(LocalDate.of(2023, 01, 13));
+          at7.setInicio(LocalDate.of(2012, 1, 2));
+          at7.setTermino(LocalDate.of(2023, 1, 13));
           
           Atuacao at8 = new Atuacao();
-          at8.setInicio(LocalDate.of(2012, 01, 03));
-          at8.setTermino(LocalDate.of(2023, 01, 13));
+          at8.setInicio(LocalDate.of(2012, 1, 3));
+          at8.setTermino(LocalDate.of(2023, 1, 13));
           
           Atuacao at9 = new Atuacao();
-          at9.setInicio(LocalDate.of(2012, 01, 04));
-          at9.setTermino(LocalDate.of(2024, 01, 14));
+          at9.setInicio(LocalDate.of(2012, 1, 4));
+          at9.setTermino(LocalDate.of(2024, 1, 14));
           
           Atuacao at10 = new Atuacao();
-          at10.setInicio(LocalDate.of(2012, 01, 04));
-          at10.setTermino(LocalDate.of(2024, 01, 14));
+          at10.setInicio(LocalDate.of(2012, 1, 4));
+          at10.setTermino(LocalDate.of(2024, 1, 14));
           
           Atuacao at11 = new Atuacao();
-          at11.setInicio(LocalDate.of(2012, 01, 04));
-          at11.setTermino(LocalDate.of(2024, 01, 14));
+          at11.setInicio(LocalDate.of(2012, 1, 4));
+          at11.setTermino(LocalDate.of(2024, 1, 14));
               
         
           

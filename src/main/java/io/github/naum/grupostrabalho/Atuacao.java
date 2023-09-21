@@ -1,19 +1,18 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package io.github.naum.grupostrabalho;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 
 /**
  *
- * @author IFNMG
+ * @author Friedrich Naum
  */
 @Entity
 public class Atuacao implements Serializable {
@@ -27,6 +26,13 @@ public class Atuacao implements Serializable {
     
     private LocalDate termino;
     
+        @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "pessoa_id")
+    private Pessoa pessoa;
+    
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "grupo_id")
+    private Grupo grupo;
     
     public Long getId() {
         return id;
