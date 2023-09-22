@@ -7,6 +7,8 @@ package io.github.naum.grupostrabalho;
 import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -23,6 +25,7 @@ public class Endereco implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Enumerated(EnumType.ORDINAL)
     private TipoLogradouro tipoLogradouro;
     
     @Column(length=150)

@@ -4,6 +4,7 @@
  */
 package io.github.naum.grupostrabalho;
 
+import java.util.List;
 import javax.ejb.Local;
 
 /**
@@ -14,5 +15,11 @@ import javax.ejb.Local;
 public interface GrupoServiceLocal {
 
     void salvar(Grupo grupo);
+
+    public List<Grupo> GruposNAtivos();
+
+    public List<Grupo> GruposLideres();
+
+    public List<Object[]> MembrosDESC();
     
 }

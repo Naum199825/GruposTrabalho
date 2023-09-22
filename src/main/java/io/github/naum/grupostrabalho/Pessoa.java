@@ -9,6 +9,7 @@ import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
+import javax.json.bind.annotation.JsonbTransient;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -40,6 +41,18 @@ import javax.persistence.Transient;
         @NamedQuery(
             name = "Pessoa.nomePessoasEnderecosALL",
             query = "SELECT p.nome, p.endereco FROM Pessoa p"
+    ),
+         @NamedQuery(
+            name = "Pessoa.pessoasMAvenidaALL",
+            query = "SELECT p from Pessoa p WHERE p.endereco.tipoLogradouro = 1"
+    ),
+         @NamedQuery(
+            name = "Pessoa.pessoasNMPracaALL",
+            query = "SELECT p from Pessoa p WHERE NOT p.endereco.tipoLogradouro = 2"
+    ),
+        @NamedQuery(
+            name = "Pessoa.nomePessoasTelefonesALL",
+            query = "SELECT p.nome, p.telefone FROM Pessoa p"
     )
 })
 public class Pessoa implements Serializable {
@@ -65,6 +78,7 @@ public class Pessoa implements Serializable {
     @JoinColumn(name = "endereco_id")
     private Endereco endereco;
     
+    @JsonbTransient
     @OneToMany(cascade = CascadeType.ALL)
     @JoinColumn(name = "pessoa_id")
     private List<Telefone> telefone;

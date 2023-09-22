@@ -35,5 +35,33 @@ public interface PessoaServiceLocal {
     public List<Object[]> nomePessoaEnderecosNamedQuery();
 
     public List<Pessoa> pessoasNMPraca();
+
+    public List<Pessoa> nomePessoasTelefones();
+
+    public List<Object[]> nomePessoaTelefonesNamedQuery();
+
+    public List<Object[]> nomePessoastelefonesTypedQuery();
+    
+    public List<Pessoa> PessoasDataNasc();
+
+    public List<Pessoa> PessoasDDDQuery();
+
+    public List<Pessoa> PessoasSemTelefoneQuery();
+
+    public List<Pessoa> PessoasQTDTelefonesQuery();
+
+    public List<Pessoa> PessoasDDD2Query();
+
+    public List<Pessoa> pessoasNMPracaNamedQuery();
+
+    public List<Pessoa> pessoasNMPracaTypedQuery();
+
+    public List<Pessoa> pessoasMAvenidas();
+
+    public List<Pessoa> pessoasMAvenidaTypedQuery();
+
+    public List<Pessoa> pessoaMAvenidaNamedQuery();
+
+    public List<Pessoa> membrosDescQuery(String nomeGrupo);
     
 }

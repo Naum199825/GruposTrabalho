@@ -25,6 +25,9 @@ public class Relatorios extends HttpServlet {
     
     @Inject
     private PessoaServiceLocal pS;
+    
+    @Inject
+    private GrupoServiceLocal gS;
             
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -49,30 +52,106 @@ public class Relatorios extends HttpServlet {
             out.println("<title>Servlet Relatorios</title>");            
             out.println("</head>");
             out.println("<body>");
+            
+            //<editor-fold defaultstate="collapsed" desc="Q1">
 //            out.println("<h2> Q1: Dados das Pessoas por Query </h2>");
-//            out.println("<h2>" + Util.toJson(pS.dadosPessoas()) +"</h2>");
+//            out.println("<pre class=\"high\">" + Util.toJson(pS.dadosPessoas()) +"</pre>");
 //            out.println("<h2> Q1: Dados das Pessoas por TypedQuery </h2>");
-//            out.println("<h2>" + Util.toJson(pS.dadosPessoaTyped()) +"</h2>");
+//            out.println("<pre class=\"high\">" + Util.toJson(pS.dadosPessoaTyped()) +"</pre>");
 //            out.println("<h2> Q1: Dados das Pessoas por NamedQuery </h2>");
-//            out.println("<h2>" + Util.toJson(pS.dadosPessoaNamedQuery())+"</h2>");
+//            out.println("<pre class=\"high\">>" + Util.toJson(pS.dadosPessoaNamedQuery())+"</pre>");
+//</editor-fold>
+
+            //<editor-fold defaultstate="collapsed" desc="Q2">
 //            out.println("<h2> Q2: Nome das Pessoas por Query </h2>");
-//            out.println("<h2>" + Util.toJson(pS.nomePessoas()) +"</h2>");
+//            out.println("<pre class=\"high\">" + Util.toJson(pS.nomePessoas()) +"</pre>");
 //            out.println("<h2> Q2: Nome das Pessoas por TypedQuery </h2>");
-//            out.println("<h2>" + Util.toJson(pS.nomePessoasTyped()) +"</h2>");
+//            out.println("<pre class=\"high\">" + Util.toJson(pS.nomePessoasTyped()) +"</pre>");
 //            out.println("<h2> Q2: Nome das Pessoas por NamedQuery </h2>");
-//            out.println("<h2>" + Util.toJson(pS.nomePessoaNamedQuery())+"</h2>");
+//            out.println("<pre class=\"high\">" + Util.toJson(pS.nomePessoaNamedQuery())+"</pre>");
+//</editor-fold>
+
+            //<editor-fold defaultstate="collapsed" desc="Q3">
 //            out.println("<h2> Q3: Nome das Pessoas e seus Enderecos por Query </h2>");
-//            out.println("<h2>" + Util.toJson(pS.nomePessoasEnderecos())+"</h2>");
+//            out.println("<pre class=\"high\">" + Util.toJson(pS.nomePessoasEnderecos())+"</pre>");
 //            out.println("<h2> Q3: Nome das Pessoas e seus Enderecos por TypedQuery </h2>");
-//            out.println("<h2>" + Util.toJson(pS.nomePessoasEnderecosTypedQuery())+"</h2>");
+//            out.println("<pre class=\"high\">" + Util.toJson(pS.nomePessoasEnderecosTypedQuery())+"</pre>");
 //            out.println("<h2> Q3: Nome das Pessoas e seus Enderecos por NamedQuery </h2>");
-//            out.println("<h2>" + Util.toJson(pS.nomePessoaEnderecosNamedQuery())+"</h2>");
-              out.println("<h2> Q3: Nome das Pessoas e seus Enderecos por Query </h2>");
-              out.println("<h2>" + Util.toJson(pS.pessoasNMPraca())+"</h2>");
-//            out.println("<h2> Q3: Nome das Pessoas e seus Enderecos por TypedQuery </h2>");
-//            out.println("<h2>" + Util.toJson(pS.nomePessoasEnderecosTypedQuery())+"</h2>");
-//            out.println("<h2> Q3: Nome das Pessoas e seus Enderecos por NamedQuery </h2>");
-//            out.println("<h2>" + Util.toJson(pS.nomePessoaEnderecosNamedQuery())+"</h2>");
+//            out.println("<pre class=\"high\">" + Util.toJson(pS.nomePessoaEnderecosNamedQuery())+"</pre>");
+//</editor-fold>
+
+            //<editor-fold defaultstate="collapsed" desc="Q4">
+//                 out.println("<h2> Q4: Pessoas que moram em Avenida por Query </h2>");
+//              out.println("<pre class=\"high\">" + Util.toJson(pS.pessoasMAvenidas())+"</pre>");
+//
+//               out.println("<h2> Q4: Pessoas que moram em Avenida por TypedQuery</h2>");
+//              out.println("<pre class=\"high\">" + Util.toJson(pS.pessoasMAvenidaTypedQuery())+"</pre>");
+//              
+//               out.println("<h2> Q4: Pessoas que moram em Avenida Por NamedQuery </h2>");
+//              out.println("<pre class=\"high\">" + Util.toJson(pS.pessoaMAvenidaNamedQuery())+"</pre>");
+//</editor-fold>
+
+            //<editor-fold defaultstate="collapsed" desc="Q5">
+//                out.println("<h2> Q5: Nome das Pessoas que  não moram em Praca </h2>");
+//              out.println("<pre class=\"high\">" + Util.toJson(pS.pessoasNMPraca())+"</pre>");
+//
+//               out.println("<h2> Q5: Nome das Pessoas que  não moram em Praca por TypedQuery</h2>");
+//              out.println("<pre class=\"high\">" + Util.toJson(pS.pessoasNMPracaTypedQuery())+"</pre>");
+//              
+//               out.println("<h2> Q5: Nome das Pessoas que  não moram em Praca Por NamedQuery </h2>");
+//              out.println("<pre class=\"high\">" + Util.toJson(pS.pessoasNMPracaNamedQuery())+"</pre>");
+//</editor-fold>
+
+            //<editor-fold defaultstate="collapsed" desc="Q6">
+//            out.println("<h2> Q6: Nome das Pessoas e seus Telefones por Query </h2>");
+//              out.println("<pre class=\"high\">" + Util.toJson(pS.nomePessoasTelefones())+"</pre>");
+
+//            out.println("<h2> Q6: Nome das Pessoas e seus Telefones por TypedQuery </h2>");
+//            out.println("<pre class=\"high\">" + Util.toJson(pS.nomePessoastelefonesTypedQuery())+"</pre>");
+
+//            out.println("<h2> Q6: Nome das Pessoas e seus Telefoness por NamedQuery </h2>");
+//            out.println("<pre class=\"high\">" + Util.toJson(pS.nomePessoaTelefonesNamedQuery())+"</pre>");
+//</editor-fold>
+ 
+            //<editor-fold defaultstate="collapsed" desc="Q7">
+//              out.println("<h2> Q7: Pessoas que nascem entre duas datas por Query </h2>");
+//              out.println("<pre class=\"high\">" + Util.toJson(pS.PessoasDataNasc())+"</pre>");
+//</editor-fold>
+
+            //<editor-fold defaultstate="collapsed" desc="Q8">
+//               out.println("<h2> Q8A: Pessoas com DDD do Parana </h2>");
+//               out.println("<pre class=\"high\">" + Util.toJson(pS.PessoasDDDQuery())+"</pre>");
+
+//               out.println("<h2> Q8B: Pessoas com DDD </h2>");
+//               out.println("<pre class=\"high\">" + Util.toJson(pS.PessoasDDD2Query())+"</pre>");
+//</editor-fold>
+              
+            //<editor-fold defaultstate="collapsed" desc="Q9">
+//               out.println("<h2> Q9: Pessoas que não tem Telefone </h2>");
+//                out.println("<pre class=\"high\">" + Util.toJson(pS.PessoasSemTelefoneQuery())+"</pre>");
+//</editor-fold>      
+
+            //<editor-fold defaultstate="collapsed" desc="Q10">
+//                out.println("<h2> Q10: Pessoas e qtd de Telefones </h2>");
+//                out.println("<pre class=\"high\">" + Util.toJson(pS.PessoasQTDTelefonesQuery())+"</pre>");
+//</editor-fold>
+           
+            //<editor-fold defaultstate="collapsed" desc="Q11">
+//                out.println("<h2> Q11: Grupos não Ativos </h2>");
+//                out.println("<pre class=\"high\">" + Util.toJson(gS.GruposNAtivos())+"</pre>");
+//</editor-fold>
+            
+            //<editor-fold defaultstate="collapsed" desc="Q12">
+//                out.println("<h2> Q12: Grupos e Lideres </h2>");
+//                out.println("<pre class=\"high\">" + Util.toJson(gS.GruposLideres())+"</pre>");
+//</editor-fold>
+                
+        
+//                
+
+                
+                out.println("<h2> Q13: Memebros e Grupos Especifico 'Estudo IV' por Ordem Descrescente </h2>");
+                out.println("<pre class=\"high\">" + Util.toJson(pS.membrosDescQuery("Estudo IV"))+"</pre>");
             out.println("</body>");
             out.println("</html>");
         }
