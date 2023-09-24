@@ -1,7 +1,10 @@
-package io.github.naum.grupostrabalho;
+package io.github.naum.grupostrabalho.atuacao;
 
+import io.github.naum.grupostrabalho.grupo.Grupo;
+import io.github.naum.grupostrabalho.pessoa.Pessoa;
 import java.io.Serializable;
 import java.time.LocalDate;
+import javax.json.bind.annotation.JsonbTransient;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -26,10 +29,12 @@ public class Atuacao implements Serializable {
     
     private LocalDate termino;
     
-        @ManyToOne(cascade = CascadeType.ALL)
+    @JsonbTransient
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "pessoa_id")
     private Pessoa pessoa;
     
+    @JsonbTransient
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "grupo_id")
     private Grupo grupo;

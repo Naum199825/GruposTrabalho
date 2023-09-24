@@ -1,5 +1,12 @@
-package io.github.naum.grupostrabalho;
+package io.github.naum.grupostrabalho.cargadados;
 
+import io.github.naum.grupostrabalho.atuacao.Atuacao;
+import io.github.naum.grupostrabalho.endereco.Endereco;
+import io.github.naum.grupostrabalho.Telefone;
+import io.github.naum.grupostrabalho.grupo.GrupoServiceLocal;
+import io.github.naum.grupostrabalho.grupo.Grupo;
+import io.github.naum.grupostrabalho.pessoa.Pessoa;
+import io.github.naum.grupostrabalho.pessoa.PessoaServiceLocal;
 import java.time.LocalDate;
 import java.time.Month;
 import java.util.List;

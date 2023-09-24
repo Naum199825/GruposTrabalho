@@ -3,11 +3,11 @@
   <!-- Define Persistence Unit -->
   <persistence-unit name="GruposTrabalhoPU" transaction-type="JTA">
     <jta-data-source>java:/GruposTrabalhoDS</jta-data-source>
-    <class>io.github.naum.grupostrabalho.Pessoa</class>
     <class>io.github.naum.grupostrabalho.Telefone</class>
-    <class>io.github.naum.grupostrabalho.Grupo</class>
-    <class>io.github.naum.grupostrabalho.Endereco</class>
-    <class>io.github.naum.grupostrabalho.Atuacao</class>
+    <class>io.github.naum.grupostrabalho.pessoa.Pessoa</class>
+    <class>io.github.naum.grupostrabalho.grupo.Grupo</class>
+    <class>io.github.naum.grupostrabalho.atuacao.Atuacao</class>
+    <class>io.github.naum.grupostrabalho.endereco.Endereco</class>
     <shared-cache-mode>DISABLE_SELECTIVE</shared-cache-mode>
     <properties>
       <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>

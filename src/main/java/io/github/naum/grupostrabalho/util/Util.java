@@ -1,5 +1,5 @@
 
-package io.github.naum.grupostrabalho;
+package io.github.naum.grupostrabalho.util;
 
 import java.util.Locale;
 import javax.json.bind.Jsonb;

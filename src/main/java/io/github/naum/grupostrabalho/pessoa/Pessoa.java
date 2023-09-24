@@ -2,8 +2,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package io.github.naum.grupostrabalho;
+package io.github.naum.grupostrabalho.pessoa;
 
+import io.github.naum.grupostrabalho.atuacao.Atuacao;
+import io.github.naum.grupostrabalho.endereco.Endereco;
+import io.github.naum.grupostrabalho.grupo.Grupo;
+import io.github.naum.grupostrabalho.Telefone;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;

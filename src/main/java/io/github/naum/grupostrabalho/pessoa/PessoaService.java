@@ -1,4 +1,4 @@
-package io.github.naum.grupostrabalho;
+package io.github.naum.grupostrabalho.pessoa;
 
 import java.util.List;
 import javax.ejb.Stateless;

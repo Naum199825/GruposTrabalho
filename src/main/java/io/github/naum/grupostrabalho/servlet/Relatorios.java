@@ -2,10 +2,15 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
  */
-package io.github.naum.grupostrabalho;
+package io.github.naum.grupostrabalho.servlet;
 
+import io.github.naum.grupostrabalho.util.Util;
+import io.github.naum.grupostrabalho.grupo.GrupoServiceLocal;
+import io.github.naum.grupostrabalho.pessoa.PessoaServiceLocal;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.time.LocalDate;
+import java.time.Month;
 import java.util.List;
 import javax.inject.Inject;
 import javax.servlet.ServletException;
@@ -144,14 +149,60 @@ public class Relatorios extends HttpServlet {
             //<editor-fold defaultstate="collapsed" desc="Q12">
 //                out.println("<h2> Q12: Grupos e Lideres </h2>");
 //                out.println("<pre class=\"high\">" + Util.toJson(gS.GruposLideres())+"</pre>");
-//</editor-fold>
-                
-        
-//                
+//</editor-fold>             
 
-                
-                out.println("<h2> Q13: Memebros e Grupos Especifico 'Estudo IV' por Ordem Descrescente </h2>");
-                out.println("<pre class=\"high\">" + Util.toJson(pS.membrosDescQuery("Estudo IV"))+"</pre>");
+            //<editor-fold defaultstate="collapsed" desc="Q13">
+//            out.println("<h2> Q13: Membros e Grupos Especifico 'Estudo IV' por Ordem Descrescente </h2>");
+//            out.println("<pre class=\"high\">" + Util.toJson(pS.membrosDescQuery("Estudo IV"))+"</pre>");
+//</editor-fold>
+            
+            //<editor-fold defaultstate="collapsed" desc="Q14">
+//            out.println("<h2> Q14: Grupos que tem Beatriz Yana como Lider </h2>");
+//            out.println("<pre class=\"high\">" + Util.toJson(gS.gruposLiderados("Beatriz Yana"))+"</pre>");
+//</editor-fold>
+
+            //<editor-fold defaultstate="collapsed" desc="Q15">
+//            out.println("<h2> Q15: Datas de atuação e os Nomes dos Grupos nos qual Cecilia é Membro</h2>");
+//            out.println("<pre class=\"high\">" + Util.toJson(gS.dataIniDatafimCecilia("Cecilia Xerxes"))+"</pre>");
+//</editor-fold>
+
+            //<editor-fold defaultstate="collapsed" desc="Q16">
+//            out.println("<h2> Q16: Grupos que contém 'II' </h2>");// It's not working
+//            out.println("<pre class=\"high\">" + Util.toJson(gS.gruposContemII("II"))+"</pre>");
+//</editor-fold>
+
+            //<editor-fold defaultstate="collapsed" desc="Q17">
+//            out.println("<h2> Q17: Quais são os grupos (nomes) e Membros distintos alocados </h2>");//It's not working
+//            out.println("<pre class=\"high\">" + Util.toJson(gS.gruposMembrosDistin())+"</pre>");
+//</editor-fold>
+
+            //<editor-fold defaultstate="collapsed" desc="Q18">
+//            out.println("<h2> Q18: Grupos (nomes) têm 3 ou mais atuações de membros e qtd total de atuações </h2>");//It's not working
+//            out.println("<pre class=\"high\">" + Util.toJson(gS.grupos3MaisMembros(3L))+"</pre>");
+//</editor-fold>
+
+            //<editor-fold defaultstate="collapsed" desc="Q19">
+//            out.println("<h2> Q19: Quais membros (nomes) entraram a partir de 2012 no primeiro grupo? </h2>");//It's not working
+//            out.println("<pre class=\"high\">" + Util.toJson(gS.memebros2012("Estudo I", LocalDate.of(2012, Month.JANUARY, 1)))+"</pre>");
+//</editor-fold>
+
+            //<editor-fold defaultstate="collapsed" desc="Q20">
+//            out.println("<h2> Q20: Quais os grupos (nomes), membros (nomes) e as respectivas datas de entrada daqueles que entraram a partir de 2012 em qualquer grupo? </h2>");//It's not working
+//            out.println("<pre class=\"high\">" + Util.toJson(gS.infoMemGrupo(LocalDate.of(2012, Month.JANUARY, 1)))+"</pre>");
+//</editor-fold>
+
+            //<editor-fold defaultstate="collapsed" desc="Q21">
+//            out.println("<h2> Q21: Quais os grupos (nomes) e respectivos membros (nomes) que não possuem data de término de atuação em seus grupos? </h2>");//It's not working
+//            out.println("<pre class=\"high\">" + Util.toJson(gS.semTermino())+"</pre>");
+//</editor-fold>
+
+            //<editor-fold defaultstate="collapsed" desc="Q22">
+            out.println("<h2> Q22: Quais são os grupos (nomes) e líderes (nomes) com respectivos membros(nomes)? </h2>");//It's not working
+            out.println("<pre class=\"high\">" + Util.toJson(gS.questao22())+"</pre>");
+//</editor-fold>
+
+            
+            
             out.println("</body>");
             out.println("</html>");
         }
